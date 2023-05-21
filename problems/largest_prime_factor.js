@@ -1,7 +1,7 @@
 /*
 The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
-*/
+// */
 
 const lim = 600851475143   
 var result = lim
@@ -30,3 +30,16 @@ for(i=2; i<lim; i++){
     }
 }
 console.log(Math.max(...primeFactors))
+
+// Method 2
+var prime = 2
+var num = 600851475143
+while(num > 1){
+    if(num % prime == 0){
+        num = num / prime
+    } 
+    else {
+        prime += 1
+    }
+}
+console.log(prime)
