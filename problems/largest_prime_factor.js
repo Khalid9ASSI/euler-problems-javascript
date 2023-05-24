@@ -33,7 +33,7 @@ console.log(Math.max(...primeFactors))
 
 // Method 2
 var prime = 2
-var num = 600851475143
+var num = 10
 while(num > 1){
     if(num % prime == 0){
         num = num / prime
