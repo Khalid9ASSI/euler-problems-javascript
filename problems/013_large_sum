@@ -115,7 +115,6 @@ for(let i = 50; i>0; i--){
     for(let j = 0; j<100; j++){
         tempSum += Number(numbers[j][0][i-1])
     }
-
     if(i==1){
         sum = tempSum + sum
     } else {
@@ -123,8 +122,6 @@ for(let i = 50; i>0; i--){
         sum = remainder + sum
     
     }
-
     tempSum = Math.floor(tempSum/10)
 }
 console.log(sum.slice(0,10))
-
