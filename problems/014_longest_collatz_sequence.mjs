@@ -11,7 +11,6 @@
 // */
 
 function lengthOfSequenceOf(num){
-    var tempNum=num
     const numSequence = []
     while(num!==1){
         numSequence.push(num)
@@ -29,8 +28,26 @@ var max = 1000000
 var maxLength = 10
 var numSequenceLength 
 var numberWithMaxLength 
+var numSequence = [] 
+var num
+const mapInu = new Map()
 for(let i = 2; i<max; i++){
-    numSequenceLength=lengthOfSequenceOf(i)
+    num = i
+    numSequenceLength = 1
+    while(num!==1){
+        if(!mapInu.has(num)){
+            numSequenceLength+=1
+            if(num%2==0){
+                num = num/2
+            } else {
+                num = (3*num) + 1
+            }
+        } else {
+            numSequenceLength += mapInu.get(num)
+            break
+        }
+    }
+    mapInu.set(i, numSequenceLength)
     if(numSequenceLength>maxLength){
         maxLength = numSequenceLength
         numberWithMaxLength = i
